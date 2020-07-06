@@ -5,7 +5,7 @@ session_start();
 $host="localhost";
 $username="root";
 $password="";
-$dbname="Teacher_Login";
+$dbname="mca_app";
 
 if(isset($_POST['login']))
 {
@@ -16,7 +16,7 @@ if(isset($_POST['login']))
 	
 	if($id!=' ' && $password!=' ')
 	{
-	$sql="select ID from Teacher where ID='$id'";
+	$sql="select ID from login where ID='$id'";
 	$result=mysqli_query($con,$sql);
 	$rows=mysqli_num_rows($result);
 	}
@@ -26,7 +26,7 @@ if(isset($_POST['login']))
 	if($rows==1)
 		header("Location:files.html");
 	else
-		echo"no data";
+		echo"<script type=text/javascript>alert('No data found')</script>";
 	
 }
 	
